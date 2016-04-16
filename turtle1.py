@@ -39,7 +39,7 @@ def row_6(turtle_, size):
     turtle_.forward(20)
 
 
-def star_row(turtle_, size=6):
+def draw_all_stars(turtle_, size=6):
     row_6(turtle_, size)
     row_5(turtle_, size)
     row_6(turtle_, size)
@@ -54,11 +54,32 @@ def star_row(turtle_, size=6):
         turtle_.forward(20)
 
 
+def draw_square(turtle_, color, size=6, speed=100):
+    turtle_.pencolor(color)
+    turtle_.pendown()
+    turtle_.fillcolor(color)
+    turtle_.begin_fill()
+    for i in range(4):
+        turtle_.forward(size+100)
+        turtle_.right(90)
+    turtle_.end_fill()
+
+
 def main():
     turt = turtle.Turtle()
-    turt.screen.bgcolor('blue')
+    turt.screen.bgcolor('white')
+    turt.pencolor('white')
+    turt.left(90)
+    turt.forward(90)
+    turt.left(90)
+    turt.forward(50)
+    draw_square(turt, 'blue', 90)
+    turt.forward(50)
+    turt.right(90)
+    turt.forward(50)
+    turt.left(90)
     turt.pencolor('blue')
-    star_row(turt, size=4)
+    draw_all_stars(turt, size=4)
     turtle.done()
 
 
