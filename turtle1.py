@@ -60,26 +60,56 @@ def draw_square(turtle_, color, size=6, speed=100):
     turtle_.fillcolor(color)
     turtle_.begin_fill()
     for i in range(4):
-        turtle_.forward(size+100)
+        turtle_.forward(size+75)
         turtle_.right(90)
     turtle_.end_fill()
+
+
+def draw_rectangle(turtle_, color, size=4):
+    turtle_.pencolor(color)
+    turtle_.pendown()
+    turtle_.fillcolor(color)
+    turtle_.begin_fill()
+    turtle_.forward(140)
+    turtle_.right(90)
+    turtle_.forward(20)
+    turtle_.right(90)
+    turtle_.forward(140)
+    turtle_.right(90)
+    turtle_.forward(20)
+    turtle_.end_fill()
+    pass
 
 
 def main():
     turt = turtle.Turtle()
     turt.screen.bgcolor('white')
     turt.pencolor('white')
+
+    # Position for blue square
     turt.left(90)
     turt.forward(90)
     turt.left(90)
     turt.forward(50)
     draw_square(turt, 'blue', 90)
-    turt.forward(50)
+
+    # Position for States' stars
+    turt.forward(35)
     turt.right(90)
-    turt.forward(50)
+    turt.forward(30)
     turt.left(90)
+
     turt.pencolor('blue')
     draw_all_stars(turt, size=4)
+
+    # Position for rectangles
+    turt.right(180)
+    turt.forward(157)
+    turt.left(90)
+    turt.forward(40)
+    turt.right(90)
+
+    draw_rectangle(turt, "red")
     turtle.done()
 
 
