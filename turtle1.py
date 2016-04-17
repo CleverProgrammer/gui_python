@@ -70,15 +70,14 @@ def draw_rectangle(turtle_, color, size=4):
     turtle_.pendown()
     turtle_.fillcolor(color)
     turtle_.begin_fill()
-    turtle_.forward(140)
+    turtle_.forward(300)
     turtle_.right(90)
     turtle_.forward(20)
     turtle_.right(90)
-    turtle_.forward(140)
+    turtle_.forward(300)
     turtle_.right(90)
     turtle_.forward(20)
     turtle_.end_fill()
-    pass
 
 
 def main():
@@ -110,6 +109,12 @@ def main():
     turt.right(90)
 
     draw_rectangle(turt, "red")
+
+    for i in range(3):
+        turt.right(180)
+        turt.forward(40)
+        turt.left(90)
+        draw_rectangle(turt, "red")
     turtle.done()
 
 
