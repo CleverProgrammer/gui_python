@@ -55,7 +55,7 @@ def draw_all_stars(turtle_, size=6):
 
 
 def draw_square(turtle_, color, size=6, speed=100):
-    turtle_.pencolor(color)
+    turtle_.pencolor('black')
     turtle_.pendown()
     turtle_.fillcolor(color)
     turtle_.begin_fill()
@@ -65,16 +65,16 @@ def draw_square(turtle_, color, size=6, speed=100):
     turtle_.end_fill()
 
 
-def draw_rectangle(turtle_, color, size=4):
-    turtle_.pencolor(color)
+def draw_rectangle(turtle_, color, size=4, length=300):
+    turtle_.pencolor('black')
     turtle_.pendown()
     turtle_.fillcolor(color)
     turtle_.begin_fill()
-    turtle_.forward(300)
+    turtle_.forward(length)
     turtle_.right(90)
     turtle_.forward(20)
     turtle_.right(90)
-    turtle_.forward(300)
+    turtle_.forward(length)
     turtle_.right(90)
     turtle_.forward(20)
     turtle_.end_fill()
@@ -93,6 +93,7 @@ def main():
     draw_square(turt, 'blue', 90)
 
     # Position for States' stars
+    turt.pencolor('blue')
     turt.forward(35)
     turt.right(90)
     turt.forward(30)
@@ -102,19 +103,55 @@ def main():
     draw_all_stars(turt, size=4)
 
     # Position for rectangles
+    turt.penup()
     turt.right(180)
     turt.forward(157)
     turt.left(90)
-    turt.forward(40)
+    turt.forward(41)
     turt.right(90)
 
     draw_rectangle(turt, "red")
 
     for i in range(3):
         turt.right(180)
-        turt.forward(40)
+        turt.forward(48)
         turt.left(90)
         draw_rectangle(turt, "red")
+
+    # Start making the long bottom red strips
+    turt.penup()
+    turt.backward(70)
+    turt.right(90)
+    turt.forward(302)
+    turt.right(180)
+    draw_rectangle(turt, "red", length=466)
+
+    turt.right(90)
+    turt.forward(466)
+    turt.left(90)
+    turt.penup()
+    turt.forward(30)
+    turt.left(90)
+    draw_rectangle(turt, "red", length=466)
+
+    turt.right(180)
+    turt.penup()
+    turt.forward(45)
+    turt.left(90)
+    draw_rectangle(turt, "red", length=466)
+
+    turt.pendown()
+    turt.pencolor('black')
+    turt.forward(290)
+    turt.right(90)
+    turt.forward(465)
+    turt.right(90)
+    turt.forward(310)
+    turt.right(90)
+    turt.forward(466)
+    turt.right(90)
+    turt.forward(300)
+
     turtle.done()
 
 
